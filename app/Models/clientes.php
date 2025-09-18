@@ -29,4 +29,9 @@ class clientes extends Model
     {
         return $this->fechaNacimiento->diffInYears(now());
     }
+
+    public function diasRegistro ()
+    {
+        return $this->fechaRegistro->diffInDays(now());
+    }
 }
