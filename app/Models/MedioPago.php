@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class MedioPago extends Model
 {
      protected $table = 'MedioPago';
+
+
     protected $fillable = [
         'nombre',
         'descripcion'
