@@ -30,8 +30,8 @@ class ClientesRequest extends FormRequest
             'telefono'        => 'required|string|min:7|max:15|regex:/^[0-9]+$/',
             'email'           => 'required|email|max:150|unique:clientes,email',
             'direccion'       => 'required|string|min:5|max:150',
-            'fechaRegistro'   => 'required|date',
-            'fechaNacimiento' => 'required|date',
+            'fechaRegistro'   => 'required|date|before_or_equal:today',
+            'fechaNacimiento' => 'required|date|before_or_equal:today',
             'estado'          => 'required|in:activo,inactivo',
             
         ];
@@ -75,9 +75,12 @@ class ClientesRequest extends FormRequest
 
             'fechaRegistro.required'   => 'La fecha de registro es obligatoria.',
             'fechaRegistro.date'       => 'La fecha de registro no tiene un formato válido.',
+            'fechaRegistro.before_or_equal' => 'La fecha de registro no puede ser futura.',
+
 
             'fechaNacimiento.required' => 'La fecha de nacimiento es obligatoria.',
             'fechaNacimiento.date'     => 'La fecha de nacimiento no tiene un formato válido.',
+            'fechaNacimiento.before_or_equal' => 'La fecha de nacimiento no puede ser futura.',
 
             'estado.required' => 'El estado es obligatorio.',
             'estado.in'       => 'El estado debe ser activo o inactivo.',
