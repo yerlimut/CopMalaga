@@ -24,4 +24,9 @@ class clientes extends Model
     {
         return $this->nombres . ' ' . $this->apellidos;
     }
+
+    public function edadCliente ()
+    {
+        return $this->fechaNacimiento->diffInYears(now());
+    }
 }
