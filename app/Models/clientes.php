@@ -19,4 +19,9 @@ class clientes extends Model
         'fechaNacimiento',
         'estado',
     ];
+
+    public function nombreCompleto ()
+    {
+        return $this->nombres . ' ' . $this->apellidos;
+    }
 }
