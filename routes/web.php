@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\clientesController;
+use App\Http\Controllers\MedioPagoController;
 
 Route::get('/', function () {
     return view('welcome');
