@@ -48,7 +48,7 @@ class clientesController extends Controller
     public function edit( $id)
     {
         $cliente = clientes::findorFail($id);
-        return view('clientes.edit', compact('clientes'));
+        return view('clientes.edit', compact('cliente'));
     }
 
     /**
