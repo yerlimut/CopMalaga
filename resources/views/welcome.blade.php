@@ -20,7 +20,7 @@
                     <p class="card-text text-muted">
                       Guarda la información personal y de contacto de los clientes.
                     </p>
-                    <a href="" class="btn btn-outline-primary rounded-pill px-4">Ver</a>
+                    <a href="{{ route('clientes.index')}}" class="btn btn-outline-primary rounded-pill px-4">Ver</a>
                 </div>
             </div>
         </div>
