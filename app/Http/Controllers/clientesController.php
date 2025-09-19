@@ -12,6 +12,7 @@ class clientesController extends Controller
      */
     public function index()
     {
+        //Cambio prueba pull request
         $clientes = clientes::all();
         return view('clientes.index', compact('clientes'));
     }
