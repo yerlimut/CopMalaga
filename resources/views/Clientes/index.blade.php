@@ -11,8 +11,7 @@
     <div class="container pb-5">
 
         <div class="mb-4 text-end">
-            <a href="
-            " class="btn btn-outline-primary rounded-pill px-4">
+            <a href="{{route('clientes.create')}}" class="btn btn-outline-primary rounded-pill px-4">
                 + Nueva Cliente</a>
 
             @if (session('success'))
@@ -63,17 +62,16 @@
                             <td>{{ $cliente->fechaNacimiento }}</td>
                             <td>{{ $cliente->estado }}</td>
                             <td>
-                                <a href=""
-                                    class="btn btn-success btn-sm rounded-pill px-3 me-1"> Editar </a>
+                                <a href="{{route('clientes.edit',$cliente->id)}}"class="btn btn-success btn-sm rounded-pill px-3 me-1"> Editar </a>
 
 
 
 
-                                <form action="" method="POST"
-                                    class="d-inline" onclick="confirmarEliminacion(event)">
+                                <form action="{{route('clientes.destroy',$cliente->id)}}" method="POST"
+                                    class="d-inline" >
                                     @csrf
 
-                                    <button class="btn btn-danger btn-sm rounded-pill px-3"> Eliminar </button>
+                                    <button class="btn btn-danger btn-sm rounded-pill px-3" onclick="confirmarEliminacion(event)"> Eliminar </button>
 
                                 </form>
                             </td>
