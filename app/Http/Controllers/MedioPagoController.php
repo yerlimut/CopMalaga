@@ -13,7 +13,7 @@ class MedioPagoController extends Controller
     public function index()
     {
         $mediosPago = MedioPago::all();
-        return view('mediospago.index', compact('mediosPago'));
+        return view('MediosPago.index', compact('mediosPago'));
     }
 
     /**
@@ -21,7 +21,7 @@ class MedioPagoController extends Controller
      */
     public function create()
     {
-        return view('mediospago.create');
+        return view('MediosPago.create');
     }
 
     /**
