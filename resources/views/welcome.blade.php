@@ -13,16 +13,6 @@
     <div class="container-fluid">
         <div class="row">
 
-
-
-
-
-
-
-
-
-
-
             <div class="col-4 mb-4">
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
@@ -100,11 +90,5 @@
                     </div>
                 </div>
             </div>
-
-        </div>
-    </div>
-
-
-
 
 @endsection
