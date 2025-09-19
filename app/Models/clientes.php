@@ -19,4 +19,19 @@ class clientes extends Model
         'fechaNacimiento',
         'estado',
     ];
+
+    public function nombreCompleto ()
+    {
+        return $this->nombres . ' ' . $this->apellidos;
+    }
+
+    public function edadCliente ()
+    {
+        return $this->fechaNacimiento->diffInYears(now());
+    }
+
+    public function diasRegistro ()
+    {
+        return $this->fechaRegistro->diffInDays(now());
+    }
 }
