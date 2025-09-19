@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Editar Marca
+    Editar Medio de Pago
 @endsection
 
 @section('titleContent')
@@ -14,8 +14,8 @@
 
 
         <div>
-            <form action="" class="d-flex justify-content-center align-items-center min-vh-100 " method="POST">
-
+            <form action="{{ route('mediospago.update', $medioPago->id) }}" class="d-flex justify-content-center align-items-center min-vh-100 " method="POST">
+                @csrf
                 <div>
 
                     <img src="" alt="">
@@ -39,9 +39,9 @@
 
                     <div class="mb-4">
                         <label class="form-label">Descripción</label>
-                        <input class="form-control" type="text" name="descripcion" value="">
+                        <input class="form-control" type="text" name="descripcion" value="{{ $medioPago->descripcion }}">
                     </div>
-                    <Button>Actualizar</Button>
+                    <Button type="submit" class="btn btn-outline-dark">Actualizar</Button>
                 </div>
 
 

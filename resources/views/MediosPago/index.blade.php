@@ -1,64 +1,61 @@
 @extends('layouts.app')
 
-@section('title')
-    Administrar Medios de Pago
-@endsection
+@section('title', 'Administrar Medios de Pago')
 
 @section('titleContent')
     <h1 class="text-center my-4 fw-bold">Administrar Medios de Pago</h1>
 @endsection
 
 @section('Content')
-
     <div class="container">
 
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <a href="" class="btn btn-outline-secondary">
+            <a href="{{ url()->previous() }}" class="btn btn-outline-secondary">
                 <i class="bi bi-arrow-left"></i> Volver
             </a>
 
-            <a href="" class="btn btn-primary">
+            <a href="{{ route('mediospago.create') }}" class="btn btn-primary">
                 <i class="bi bi-plus-circle"></i> Crear nuevo Medio de Pago
             </a>
         </div>
-
 
         <div class="card shadow-lg rounded-3">
             <div class="card-body">
                 <table class="table table-striped table-hover align-middle text-center">
                     <thead class="table-dark">
                         <tr>
-                            <th>Id</th>
-                            <th>Medio  Pago</th>
+                            <th>ID</th>
+                            <th>Medio de Pago</th>
                             <th>Descripción</th>
                             <th>Opciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        @forelse ($mediosPago as $medio)
+                            <tr>
+                                <td>{{ $medio->id }}</td>
+                                <td>{{ $medio->nombre }}</td>
+                                <td>{{ $medio->descripcion }}</td>
+                                <td>
+                                    <div class="d-flex justify-content-center gap-2">
+                                        <a href="{{ route('mediospago.edit', $medio->id) }}" class="btn btn-outline-primary btn-sm">
+                                            <i class="bi bi-pencil-square"></i> Actualizar
+                                        </a>
 
-
-                            <!-- <div class="d-flex gap-3">
-                                <a href="" class="btn btn-outline-primary">
-                                    Actualizar
-                                </a>
-
-                                <form action="" method="">
-                                    @csrf
-                                    <button type="submit" class="btn btn-outline-danger">Eliminar</button>
-                                </form>
-
-                            </div> -->
-
-                        </tr>
-
-
-
-
-
-
-                        </tr>
-
+                                        <form action="{{ route('mediospago.destroy', $medio->id) }}" method="POST" onsubmit="return confirm('¿Seguro que deseas eliminar este medio de pago?');">
+                                            @csrf
+                                            <button type="submit" class="btn btn-outline-danger btn-sm">
+                                                <i class="bi bi-trash"></i> Eliminar
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="4" class="text-muted">No hay medios de pago registrados.</td>
+                            </tr>
+                        @endforelse
                     </tbody>
                 </table>
             </div>
