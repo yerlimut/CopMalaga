@@ -35,7 +35,6 @@
             font-size: 14px;
         }
 
-
         .btnActualizar {
             background-color: #298b29;
             color: white;
@@ -45,6 +44,7 @@
             text-decoration: none;
             transition: transform 0.1s ease-in;
         }
+
         .btnActualizar:hover {
             background-color: #50cc50ff;
             transform: scale(1.04);
@@ -60,10 +60,12 @@
             text-decoration: none;
             transition: transform 0.1s ease-in;
         }
+
         .btnEliminar:hover {
             background-color: #ff5c67ff;
             transform: scale(1.04);
         }
+
         .crearBtn {
             background-color: #ffd230;
             color: black;
