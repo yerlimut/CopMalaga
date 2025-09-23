@@ -29,7 +29,7 @@ class EstadoPrestamoRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'nombre.required' => 'El nombre del medio de pago es obligatorio.',
+            'nombre.required' => 'El nombre del estado prestamo  es obligatorio.',
             'nombre.string'   => 'El nombre debe ser una cadena de texto.',
             'nombre.min'      => 'El nombre debe tener al menos 3 caracteres.',
             'nombre.max'      => 'El nombre no debe superar los 100 caracteres.',
