@@ -9,12 +9,12 @@
 @section('Content')
     <div class="container">
 
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <a href="{{route('welcome')}}" class="btn btn-outline-secondary">
-                <i class="bi bi-arrow-left"></i> Volver
+        <div class="d-flex justify-content-between align-items-center gap-3 mb-4">
+            <a href="{{route('welcome')}}" >
+                <i class="bi bi-arrow-left iconBack"></i>
             </a>
 
-            <a href="{{ route('mediospago.create') }}" class="btn btn-primary">
+            <a href="{{ route('mediospago.create') }}" class="crearBtn">
                 <i class="bi bi-plus-circle"></i> Crear nuevo Medio de Pago
             </a>
              @if (session('success'))
@@ -52,13 +52,13 @@
                                 <td>{{ $medio->descripcion }}</td>
                                 <td>
                                     <div class="d-flex justify-content-center gap-2">
-                                        <a href="{{ route('mediospago.edit', $medio->id) }}" class="btn btn-outline-primary btn-sm">
+                                        <a  href="{{ route('mediospago.edit', $medio->id)  }} " class="btnActualizar d-flex gap-2">
                                             <i class="bi bi-pencil-square"></i> Actualizar
                                         </a>
 
                                         <form action="{{ route('mediospago.destroy', $medio->id) }}" method="POST"onclick="confirmarEliminacion(event)">
                                             @csrf
-                                            <button type="submit" class="btn btn-outline-danger btn-sm">
+                                            <button type="submit" class="btnEliminar d-flex gap-2">
                                                 <i class="bi bi-trash"></i> Eliminar
                                             </button>
                                         </form>
