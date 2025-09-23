@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MedioPagoRequest;
 use Illuminate\Http\Request;
 use App\Models\MedioPago;
 
@@ -13,7 +14,7 @@ class MedioPagoController extends Controller
     public function index()
     {
         $mediosPago = MedioPago::all();
-        return view('mediospago.index', compact('mediosPago'));
+        return view('MediosPago.index', compact('mediosPago'));
     }
 
     /**
@@ -21,16 +22,16 @@ class MedioPagoController extends Controller
      */
     public function create()
     {
-        return view('mediospago.create');
+        return view('MediosPago.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(MedioPagoRequest $request)
     {
         MedioPago::create($request->all());
-        return redirect()->route('mediospago.index');
+        return redirect()->route('mediospago.index')-> with('success','metodo pago creado exitosamente');
 
     }
 
@@ -54,11 +55,11 @@ class MedioPagoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update(MedioPagoRequest $request, $id)
     {
         $medioPago = MedioPago::findOrFail($id);
         $medioPago->update($request->all());
-        return redirect()->route('mediospago.index');
+        return redirect()->route('mediospago.index')-> with('success','metodo pago actualizado exitosamente');
     }
 
     /**
@@ -68,6 +69,6 @@ class MedioPagoController extends Controller
     {
         $medioPago = MedioPago::findOrFail($id);
         $medioPago->delete();
-        return redirect()->route('mediospago.index');
+        return redirect()->route('mediospago.index')-> with('success','metodo pago eliminado exitosamente');
     }
 }

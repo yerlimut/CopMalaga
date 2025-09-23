@@ -26,13 +26,13 @@ class ClientesRequest extends FormRequest
             'nombres'         => 'required|string|min:3|max:100|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
             'apellidos'       => 'required|string|min:3|max:100|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
             'tipoDocumento'   => 'required|string|min:2|max:20',
-            'numeroDocumento' => 'required|string|min:5|max:20|unique:clientes,numeroDocumento',
+            'numeroDocumento' => 'required|string|min:5|max:20|',
             'telefono'        => 'required|string|min:7|max:15|regex:/^[0-9]+$/',
-            'email'           => 'required|email|max:150|unique:clientes,email',
+            'email'           => 'required|email|max:150|',
             'direccion'       => 'required|string|min:5|max:150',
             'fechaRegistro'   => 'required|date|before_or_equal:today',
             'fechaNacimiento' => 'required|date|before_or_equal:today',
-            'estado'          => 'required|in:activo,inactivo',
+            'estado'          => 'required|string',
             
         ];
 

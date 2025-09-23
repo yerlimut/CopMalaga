@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Crear Contenido
+Crear Contenido
 @endsection
 
 @section('titleContent')
@@ -10,52 +10,60 @@
 
 @section('Content')
 
-    <div>
-        <form action="" class="d-flex justify-content-center align-items-center min-vh-100 " method="POST">
+<div>
+    <form action="{{ route('mediospago.store') }}" class="d-flex justify-content-center align-items-center min-vh-100 " method="POST">
+        @csrf
+
+        <div>
+
+            <img src="" alt="">
+        </div>
+
+        <div class="d-flex flex-column form shadow p-4">
+
+            <h2>Crear medio de pago</h2>
+
+
+            <div class="mb-3">
+                <label for="nombre" class="form-label ">Medios de pago</label>
+                <select class="form-select @error('nombre') is-invalid @enderror" name="nombre" id="nombre">
+                    <option value="">Seleccione un medio de pago</option>
+                    <option value="efectivo">Efectivo</option>
+                    <option value="tarjeta_credito">Tarjeta de Crédito</option>
+                    <option value="tarjeta_debito">Tarjeta de Débito</option>
+                    <option value="transferencia">Transferencia Bancaria</option>
+                    <option value="nequi">Nequi</option>
+                    <option value="daviplata">Daviplata</option>
+                    <option value="paypal">PayPal</option>
+                </select>
+                @error('nombre')
+                <div class="invalid-feedback">{{ $message}}</div>
+                @enderror
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label">Descripción</label>
+                <input class="form-control @error('descripcion') is-invalid @enderror"
+                    type="text" name="descripcion" id="descripcion" placeholder="Ingrese una descripción">
+                @error('descripcion')
+                <div class="invalid-feedback">{{$message}}</div>
+                @enderror
+            </div>
 
             <div>
 
-                <img src="" alt="">
-            </div>
 
-            <div class="d-fex flex-column form shadow">
-         
-                <h2>Crear medio de pago</h2>
-            
-      
-                <div class="mb-3">
-                    <label for="medio_pago" class="form-label ">Medios de pago</label>
-                    <select class="form-select" name="medio_pago" id="medio_pago">
-                        <option value="">Seleccione un medio de pago</option>
-                        <option value="efectivo">Efectivo</option>
-                        <option value="tarjeta_credito">Tarjeta de Crédito</option>
-                        <option value="tarjeta_debito">Tarjeta de Débito</option>
-                        <option value="transferencia">Transferencia Bancaria</option>
-                        <option value="nequi">Nequi</option>
-                        <option value="daviplata">Daviplata</option>
-                        <option value="paypal">PayPal</option>
-                    </select>
-                </div>
-
-                <div class="mb-4">
-                    <label class="form-label">Descripción</label>
-                    <input class="form-control" type="text" name="descripcion" id="">
-                </div>
-
-                <div>
-
-                
-              <a href="" class="btn btn-outline-dark">Volver</a>
-                    <Button type="submit">Crear</Button>
-                </div>
-            
-          
+                <a href="{{ route('mediospago.index') }}" class="btn btn-outline-dark">Volver</a>
+                <Button type="submit" class="btn btn-outline-dark">Crear</Button>
             </div>
 
 
-        </form>
+        </div>
 
 
-    </div>
+    </form>
+
+
+</div>
 
 @endsection
