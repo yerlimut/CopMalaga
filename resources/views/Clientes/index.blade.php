@@ -14,7 +14,7 @@
 
             <a href="{{route('clientes.create')}}" class="btn btn-outline-primary rounded-pill px-4">
 
-                + Nueva Cliente</a>
+                + Nuevo Cliente</a>
 
             @if (session('success'))
                 <script>
