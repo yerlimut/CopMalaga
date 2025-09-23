@@ -11,7 +11,9 @@
     <div class="container pb-5">
 
         <div class="mb-4 text-end">
+
             <a href="{{route('clientes.create')}}" class="btn btn-outline-primary rounded-pill px-4">
+
                 + Nueva Cliente</a>
 
             @if (session('success'))
@@ -45,6 +47,7 @@
                         <th>fechaNacimiento</th>
                         <th>estado</th>
                         <th>Opciones</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -60,8 +63,9 @@
                             <td>{{ $cliente->direccion }}</td>
                             <td>{{ $cliente->fechaRegistro }}</td>
                             <td>{{ $cliente->fechaNacimiento }}</td>
-                            <td>{{ $cliente->estado }}</td>
+                            <td>{{ $cliente->estado == 1 ? 'Activo' : 'Inactivo' }}</td>
                             <td>
+
                                 <a href="{{route('clientes.edit',$cliente->id)}}"class="btn btn-success btn-sm rounded-pill px-3 me-1"> Editar </a>
 
 

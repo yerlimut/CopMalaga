@@ -10,11 +10,12 @@
 @section('Content')
 
 <div class="container py-4">
+
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-6">
             
             <div class="mb-4 text-start">
-                <a href="" class="btn btn-outline-secondary rounded-pill px-4">  Volver  </a>
+                <a href="{{ route('clientes.index') }}" class="btn btn-outline-secondary rounded-pill px-4">  Volver  </a>
               
                 
             </div>
@@ -23,7 +24,9 @@
             <div class="card shadow-sm rounded-4">
                 <div class="card-body">
 
+
                     <form action="{{route('clientes.store')}}" method="POST">
+
                         @csrf
 
                         <div class="mb-3">
@@ -112,15 +115,13 @@
                         </div>
                           <div class="mb-3">
                             <label for="estado" class="form-label">estado</label>
+
                             <select id="estado" name="estado" class="form-select  @error('estado') is-invalid @enderror">
                                 <option value="">seleccione un estado</option>
                                 <option value="0">activo</option>
                                 <option value="1">inactivo</option>
                             </select>
                                 @error('estado')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
-                            
                         </div>
 
 
