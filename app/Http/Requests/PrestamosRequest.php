@@ -85,7 +85,7 @@ class PrestamosRequest extends FormRequest
             // --- valorCuota ---
             'valorCuota.required' => 'El valor de la cuota es obligatorio.',
             'valorCuota.numeric' => 'El valor de la cuota debe ser numérico.',
-            'valorCuota.min' => 'El valor de la cuota no puede ser negativo.'
+            'valorCuota.min' => 'El valor de la cuota no puede ser negativo. '
         ];
     }
 }
