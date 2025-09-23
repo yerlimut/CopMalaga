@@ -21,8 +21,15 @@ Editar Medio de Pago
                 <img src="" alt="">
             </div>
 
-            <div class="d-fex flex-column form shadow">
-                <h2>Actualizar medio de pago</h2>
+            <div class="d-fex flex-column form shadow gap-2">
+                <div class="d-flex align-items-center gap-3">
+                      <a href="{{ route('mediospago.index') }}">
+                        <i class="bi bi-arrow-left iconBack"></i>
+                         
+                    </a>
+                    <h2>Actualizar medio de pago</h2>
+                </div>
+               
                 <div class="mb-3">
                     <label for="medio_pago" class="form-label ">Medios de pago</label>
                     <select class="form-select @error('nombre') is-invalid @enderror" name="nombre" id="nombre">
@@ -47,7 +54,7 @@ Editar Medio de Pago
                     <div class="invalid-feedback">{{$message}}</div>
                     @enderror
                 </div>
-                <Button type="submit" class="btn btn-outline-dark">Actualizar</Button>
+                <Button type="submit" class="btnCrearMedioPago">Actualizar</Button>
             </div>
 
 
