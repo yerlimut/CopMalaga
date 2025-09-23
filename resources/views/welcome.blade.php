@@ -16,8 +16,9 @@
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title">Medios de pago</h5>
-                        <p class="card-text">gestion de medio de pago </p>
-                        <a href="" class="btn btn-primary">Gestionar medios de pago</a>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                            card's content.</p>
+                        <a href="{{route('mediospago.index')}}" class="btn btn-primary">Gestionar medios de pago</a>
                     </div>
                 </div>
             </div>
@@ -84,7 +85,9 @@
                         <h5 class="card-title"> Clientes </h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                             card's content.</p>
-                        <a href="{{ route('clientes.index')}}" class="btn btn-primary">Clientes</a>
+
+                        <a href="{{route('clientes.index')}}" class="btn btn-primary">Clientes</a>
+
                     </div>
                 </div>
             </div>

@@ -10,13 +10,27 @@
     <div class="container">
 
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <a href="{{ url()->previous() }}" class="btn btn-outline-secondary">
+            <a href="{{route('welcome')}}" class="btn btn-outline-secondary">
                 <i class="bi bi-arrow-left"></i> Volver
             </a>
 
             <a href="{{ route('mediospago.create') }}" class="btn btn-primary">
                 <i class="bi bi-plus-circle"></i> Crear nuevo Medio de Pago
             </a>
+             @if (session('success'))
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        Swal.fire({
+                            icon: 'success',
+                            title: '¡Éxito!',
+                            text: "{{ session('success') }}",
+                            confirmButtonText: 'Aceptar',
+                            timer: 3000
+                        });
+                    });
+                </script>
+            @endif
+
         </div>
 
         <div class="card shadow-lg rounded-3">
@@ -42,7 +56,7 @@
                                             <i class="bi bi-pencil-square"></i> Actualizar
                                         </a>
 
-                                        <form action="{{ route('mediospago.destroy', $medio->id) }}" method="POST" onsubmit="return confirm('¿Seguro que deseas eliminar este medio de pago?');">
+                                        <form action="{{ route('mediospago.destroy', $medio->id) }}" method="POST"onclick="confirmarEliminacion(event)">
                                             @csrf
                                             <button type="submit" class="btn btn-outline-danger btn-sm">
                                                 <i class="bi bi-trash"></i> Eliminar
@@ -61,4 +75,25 @@
             </div>
         </div>
     </div>
+     <script>
+        function confirmarEliminacion(event) {
+            event.preventDefault();
+            const form = event.target.closest('form');
+
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "¡No podrás revertir esto!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    form.submit();
+                }
+            });
+        }
+    </script>
 @endsection

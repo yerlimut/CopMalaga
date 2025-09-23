@@ -22,7 +22,7 @@ class MedioPagoRequest extends FormRequest
       public function rules(): array
     {
         return [
-            'nombre'      => 'required|string|min:3|max:100|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$/',
+            'nombre'      => 'required|string|min:3|max:100',
             'descripcion' => 'required|string|min:5|max:500',
         ];
     }
