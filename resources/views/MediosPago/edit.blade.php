@@ -54,7 +54,7 @@ Editar Medio de Pago
                     <div class="invalid-feedback">{{$message}}</div>
                     @enderror
                 </div>
-                <Button type="submit" class="btnCrearMedioPago">Actualizar</Button>
+                <Button type="submit" class="btn btn-outline-dark">Actualizar</Button>
             </div>
 
 
