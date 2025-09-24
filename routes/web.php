@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\clientesController;
 use App\Http\Controllers\MedioPagoController;
+use App\Http\Controllers\TipoPrestamoController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,3 +24,18 @@ Route::post('/mediospago/store', [MedioPagoController::class, 'store'])->name('m
 Route::get('/mediospago/edit/{id}', [MedioPagoController::class, 'edit'])->name('mediospago.edit');
 Route::post('/mediospago/update/{id}', [MedioPagoController::class, 'update'])->name('mediospago.update');
 Route::post('/mediospago/destroy/{id}', [MedioPagoController::class, 'destroy'])->name('mediospago.destroy');
+
+// rutas para tipo_prestamo
+Route::get('/tipoprestamo/index', [TipoPrestamoController::class, 'index'])->name('tipoprestamo.index');
+Route::get('/tipoprestamo/create', [TipoPrestamoController::class, 'create'])->name('tipoprestamo.create');
+Route::post('/tipoprestamo/store', [TipoPrestamoController::class, 'store'])->name('tipoprestamo.store');
+Route::get('/tipoprestamo/edit/{id}', [TipoPrestamoController::class, 'edit'])->name('tipoprestamo.edit');
+Route::post('/tipoprestamo/update/{id}', [TipoPrestamoController::class, 'update'])->name('tipoprestamo.update');
+Route::post('/tipoprestamo/destroy/{id}', [TipoPrestamoController::class, 'destroy'])->name('tipoprestamo.destroy');
+
+
+
+
+
+
+
