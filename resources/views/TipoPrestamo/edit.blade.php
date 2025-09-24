@@ -11,7 +11,7 @@
 @section('Content')
 
     <div>
-        <form action="" class="d-flex justify-content-center align-items-center min-vh-100 "
+        <form action="{{route('tipoprestamo.update', $tipoprestamo->id)}}" class="d-flex justify-content-center align-items-center min-vh-100 "
             method="POST">
             @csrf
 
@@ -20,10 +20,10 @@
             <div class="d-flex flex-column form shadow p-4 gap-2">
 
                 <div class="d-flex align-items-center gap-3">
-                    <a href="">
+                    <a href="{{route('tipoprestamo.index')}}">
                         <i class="bi bi-arrow-left iconBack"></i>
                     </a>
-                    <h2>Crear tipo de prestamo</h2>
+                    <h2>Actualizar tipo de prestamo</h2>
                 </div>
 
 
@@ -49,9 +49,9 @@
 
 
                   <div class="mb-4">
-                           <label class="form-label">Descripción</label>
-                          <input class="form-control @error('') is-invalid @enderror" type="text" name="descripción"
-                           id="descripción" placeholder="Ingrese una descripción"  value="{{$tipoprestamo->descripción }}">
+                           <label for="descripcion" class="form-label">Descripción</label>
+                          <input class="form-control @error('descripcion') is-invalid @enderror" type="text" name="descripcion"
+                           id="descripcion" placeholder="Ingrese una descripcion"  value="{{$tipoprestamo->descripcion }}">
                           
                             @error('')
                     <div class="invalid-feedback">{{$message}}</div>
@@ -60,16 +60,16 @@
 
 
                   <div class="mb-3">
-                            <label for="intereses" class="form-label">Intereses</label>
-                            <select class="form-select"  name="intereses" id="intereses">
-                                <option value="15% – 30% anual"  @if ($tipoprestamo->intereses=='15% – 30% anual') selected @endif>15% – 30% anual</option>
-                                <option value=" 8% – 15% anual"  @if ($tipoprestamo->intereses=='8% – 15% anual') selected @endif> 8% – 15% anual</option>
-                                <option value="10% – 20% anual"  @if ($tipoprestamo->intereses=='10% – 20% anual') selected @endif>10% – 20% anual</option>
-                                <option value="5% – 12% anual"  @if ($tipoprestamo->intereses=='5% – 12% anual') selected @endif>5% – 12% anual</option>
-                                <option value="12% – 25% anual"  @if ($tipoprestamo->intereses=='12% – 25% anual') selected @endif>12% – 25% anual</option>
-                                <option value="18% – 28% anual"  @if ($tipoprestamo->intereses=='18% – 28% anual') selected @endif>18% – 28% anual</option>
-                                <option value="12% – 22% anual"  @if ($tipoprestamo->intereses=='12% – 22% anual') selected @endif>12% – 22% anual</option>
-                                <option value="20% – 35% anual"  @if ($tipoprestamo->intereses=='20% – 35% anual') selected @endif>20% – 35% anual</option>
+                            <label for="interes" class="form-label">Intereses</label>
+                            <select class="form-select"  name="interes" id="interes">
+                                <option value="0.15"  @if ($tipoprestamo->interes=='0.15') selected @endif>15% – 30% anual</option>
+                                <option value="0.08"  @if ($tipoprestamo->interes=='0.08') selected @endif> 8% – 15% anual</option>
+                                <option value="0.10"  @if ($tipoprestamo->interes=='0.10') selected @endif>10% – 20% anual</option>
+                                <option value="0.05"  @if ($tipoprestamo->interes=='0.05') selected @endif>5% – 12% anual</option>
+                                <option value="0.12"  @if ($tipoprestamo->interes=='0.12') selected @endif>12% – 25% anual</option>
+                                <option value="0.18"  @if ($tipoprestamo->interes=='0.18') selected @endif>18% – 28% anual</option>
+                                <option value="0.12"  @if ($tipoprestamo->interes=='0.12') selected @endif>12% – 22% anual</option>
+                                <option value="0.20"  @if ($tipoprestamo->interes=='0.20') selected @endif>20% – 35% anual</option>
                            
                             </select>
                              @error('')

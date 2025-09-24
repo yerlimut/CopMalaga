@@ -12,7 +12,7 @@ class TipoPrestamocontroller extends Controller
     public function index()
     {
         $tipoprestamos = TipoPrestamo::all();
-        return view('tipoprestamo.index', compact('tipoprestamos'));
+        return view('TipoPrestamo.index', compact('tipoprestamos'));
     }
 
     /**
@@ -21,7 +21,7 @@ class TipoPrestamocontroller extends Controller
     public function create()
     {
         //
-        return view('tipoprestamo.create');
+        return view('TipoPrestamo.create');
     }
 
     /**
@@ -48,7 +48,7 @@ class TipoPrestamocontroller extends Controller
     public function edit( $id)
     {
         $tipoprestamo = TipoPrestamo::findOrFail($id);
-        return view('tipoprestamo.edit', compact('tipoprestamo'));
+        return view('TipoPrestamo.edit', compact('tipoprestamo'));
     }
 
     /**

@@ -3,11 +3,25 @@
 
 CopMalaga
 
+
+# Descripcion
+
+una plataforma para la gestión de una cooperativa escolar, donde se lleva el control de estudiantes, productos, ventas, etc.
+
+
+## Caracteristicas
+
+- Registrar y administrar productos de la cooperativa.
+- Control de ventas y compras.
+- Registro de estudiantes y usuarios.
+- Reportes básicos.
+
+
+## Tecnologías y Herramientas
 # Descripción  
 
 Una plataforma para la gestión de una cooperativa escolar, enfocada en el control de préstamos y la administración de clientes, incluyendo la gestión de pagos, moras y medios de pago.  
 
----
 
 ## Características  
 
@@ -64,9 +78,6 @@ Sigue estos pasos para instalar y ejecutar el proyecto en tu entorno local:
 
 ###  Autor: Equipo Cooperativa Escolar
 Proyecto  con fines educativos.
-
----
-
 
 
 ## Colaboradores
