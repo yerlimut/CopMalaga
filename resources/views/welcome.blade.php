@@ -73,7 +73,7 @@
                         <h5 class="card-title">Estado de Prestamos</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                             card's content.</p>
-                        <a href="" class="btn btn-primary">Estado de Prestamo</a>
+                        <a href="{{route('estadoprestamo.index')}}" class="btn btn-primary">Estado de Prestamo</a>
                     </div>
                 </div>
             </div>
