@@ -43,7 +43,7 @@ class tipoPrestamoRequest extends FormRequest
             'interes.required' => 'El interés es obligatorio.',
             'interes.decimal' => 'El interés debe ser un valor numérico.',
             'interes.min' => 'El interés no puede ser menor que 0.',
-            'interes.max' => 'El interés no puede ser mayor que 100.',
+            'interes.max' => 'El interés no puede ser mayor que 100.'
         ];
     }
 }

@@ -8,6 +8,9 @@ class PrestamosRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
+     * 
+     * 
+     * 
      */
     public function authorize(): bool
     {
@@ -31,7 +34,7 @@ class PrestamosRequest extends FormRequest
             'documentoFiador' => 'nullable|string|max:20',
             'valorDesembolso' => 'required|numeric|min:0',
             'numeroCuotas' => 'required|integer|min:1',
-            'valorCuota' => 'required|numeric|min:0',
+            'valorCuota' => 'required|decimal|min:0',
             'fechaLiquidacionPrestamo' => 'nullable|date|after_or_equal:fechaDesembolso',
         ];
     }
@@ -84,8 +87,8 @@ class PrestamosRequest extends FormRequest
 
             // --- valorCuota ---
             'valorCuota.required' => 'El valor de la cuota es obligatorio.',
-            'valorCuota.numeric' => 'El valor de la cuota debe ser numérico.',
-            'valorCuota.min' => 'El valor de la cuota no puede ser negativo.',
+            'valorCuota.decimal' => 'El valor de la cuota debe ser numérico.',
+            'valorCuota.min' => 'El valor de la cuota no puede ser negativo. '
         ];
     }
 }
