@@ -25,8 +25,8 @@ class MoraRequest extends FormRequest
             'fechaInicial'   => 'required|date|before_or_equal:today',
             'fechaFinal'     => 'required|date|after_or_equal:fechaInicial',
             'valorMora'      => 'required|decimal|min:0',
-            'observaciones'  => 'nullable|string|max:500',
-            'estadoMora'     => 'required|string',
+            'observaciones'  => 'nullable|string|max:255',
+            'estadoMora'     => 'required|in:paga,pendiente',
         ];
     }
     public function messages(): array
@@ -46,10 +46,11 @@ class MoraRequest extends FormRequest
             'valorMora.min'      => 'El valor de la mora no puede ser negativo.',
 
             'observaciones.string' => 'Las observaciones deben ser texto.',
-            'observaciones.max'    => 'Las observaciones no pueden superar los 500 caracteres.',
+            'observaciones.max'    => 'Las observaciones no pueden superar los 255 caracteres.',
 
             'estadoMora.required' => 'El estado de la mora es obligatorio.',
-            'estadoMora.string'       => 'El estado de la mora debe ser "paga" o "pendiente".',
+            'estadoMora.in'       => 'El estado de la mora debe ser "paga" o "pendiente".',
+
         ];
     }
 }
