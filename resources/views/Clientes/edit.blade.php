@@ -53,7 +53,12 @@
                         <div class="mb-3">
                             <label for="tipoDocumento" class="form-label">tipoDocumento</label>
 
-                            <input type="text" id="tipoDocumento" name="tipoDocumento" class="form-control @error('tipoDocumento') is-invalid @enderror" value="{{ $cliente->tipoDocumento }}">
+                            <select class="form-select @error('tipoDocumento') is-invalid @enderror" name="tipoDocumento" id="tipoDocumento">
+                                <option value="" selected disabled >Seleccione una opcion</option>
+                                 <option value="Cedula De Ciudadania" {{$cliente->tipoDocumento == 'Cedula De Ciudadania' ? 'selected' : ''}} >Cedula De Ciudadania</option>
+                                  <option value="Tarjeta De Identidad" {{$cliente->tipoDocumento == 'Tarjeta De Identidad' ? 'selected' : ''}} >Tarjeta De Identidad</option>
+                                  
+                            </select>
                             @error('tipoDocumento')
                             <div class="invalid-feedback">{{$message}}</div>
                             @enderror
@@ -63,7 +68,7 @@
                         <div class="mb-3">
                             <label for="numeroDocumento" class="form-label">numeroDocumento</label>
 
-                            <input type="text" id="numeroDocumento" name="numeroDocumento" class="form-control @error('numeroDocumento') is-invalid @enderror" value="{{ $cliente->numeroDocumento }}">
+                            <input type="number" id="numeroDocumento" name="numeroDocumento" class="form-control @error('numeroDocumento') is-invalid @enderror" value="{{ $cliente->numeroDocumento }}">
                             @error('numeroDocumento')
                             <div class="invalid-feedback">{{$message}}</div>
                             @enderror

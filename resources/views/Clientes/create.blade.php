@@ -50,7 +50,12 @@
                         
                         <div class="mb-3">
                             <label for="tipoDocumento" class="form-label">tipoDocumento</label>
-                            <input type="text" id="tipoDocumento" name="tipoDocumento" class="form-control @error('tipoDocumento') is-invalid @enderror" >
+                            <select  class="form-select @error('tipoDocumento') is-invalid @enderror " name="tipoDocumento" id="tipoDocumento">
+                                <option value="" selected disabled >Seleccione una opcion</option>
+                                <option value="Cedula De Ciudadania">Cedula De Ciudadania</option>
+                                 <option value="Tarjeta De Identidad">Tarjeta De Identidad</option>
+                                  
+                            </select>
                                 @error('tipoDocumento')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
