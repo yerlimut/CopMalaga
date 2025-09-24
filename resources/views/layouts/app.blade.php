@@ -21,7 +21,7 @@
 
         .iconBack {
             color: #298b29;
-            font-size: 25px;
+            font-size: 24px;
             transition: transform 0.1s ease-in;
         }
 

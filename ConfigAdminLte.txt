@@ -5,7 +5,7 @@ Admin lte requiere los siguientes archivos para funcionar correctamente
     /css
     /js 
 
-Estos son los archivos estáticos como de estilos, funcionamiento e imágenes para Admin lte
+Estos sson los archivos estáticos como de estilos, funcionamiento e imágenes para Admin lte
 
 2| views/Plantilla
         /app.blade.php
