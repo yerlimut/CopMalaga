@@ -68,7 +68,7 @@
                 <div class="card-body">
                     <h5 class="card-title">🏷️ Tipo de Préstamos</h5>
                     <p class="card-text">Clasificación y gestión de tipos de préstamos.</p>
-                    <a href="#" class="btn btn-primary">Gestionar</a>
+                    <a href="{{ route('tipoprestamo.index') }}" class="btn btn-primary">Gestionar</a>
                 </div>
             </div>
         </div>
