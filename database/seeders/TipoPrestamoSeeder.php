@@ -17,27 +17,27 @@ class TipoPrestamoSeeder extends Seeder
             [
                 'nombre' => 'Préstamo Personal',
                 'descripcion' => 'Crédito de libre inversión sin necesidad de garantía.',
-                'interes' => 14.5,
+                'interes' => 0.15,
             ],
             [
                 'nombre' => 'Préstamo Hipotecario',
                 'descripcion' => 'Financiamiento para adquisición de vivienda con garantía hipotecaria.',
-                'interes' => 8.2,
+                'interes' => 0.08,
             ],
             [
                 'nombre' => 'Préstamo Vehicular',
                 'descripcion' => 'Crédito para compra de vehículo nuevo o usado.',
-                'interes' => 10.8,
+                'interes' => 0.10,
             ],
             [
                 'nombre' => 'Préstamo Estudiantil',
                 'descripcion' => 'Crédito para financiar estudios de pregrado o posgrado.',
-                'interes' => 6.5,
+                'interes' => 0.05,
             ],
             [
                 'nombre' => 'Préstamo Empresarial',
                 'descripcion' => 'Crédito dirigido a pequeñas y medianas empresas para capital de trabajo.',
-                'interes' => 12.0,
+                'interes' => 0.12,
             ],
         ]);
     }
