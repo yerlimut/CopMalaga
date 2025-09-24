@@ -73,6 +73,7 @@
             </div>
         </div>
 
+
         <!-- Estado de Préstamos -->
         <div class="col-md-4 mb-4">
             <div class="card shadow">
@@ -81,6 +82,7 @@
                     <h5 class="card-title">📊 Estado de Préstamos</h5>
                     <p class="card-text">Visualiza el estado actual de los préstamos.</p>
                     <a href="#" class="btn btn-primary">Ver Estado</a>
+
                 </div>
             </div>
         </div>
