@@ -4,21 +4,24 @@
 @endsection
 
 @section('titleContent')
-    <h1 class="text-center my-4 display-5">Cliente</h1>
+    <h1 class="text-center my-4 fw-bold">Administrar Clientes</h1>
 @endsection
 
 @section('Content')
-    <div class="container pb-5">
+    <div class="container">
 
-        <div class="mb-4 text-end">
+        <div class="d-flex justify-content-between align-items-center gap-3 mb-4">
+            <a href="{{ route('welcome') }}">
+                <i class="bi bi-arrow-left iconBack"></i>
+            </a>
 
-            <a href="{{route('clientes.create')}}" class="btn btn-outline-primary rounded-pill px-4">
-
-                + Nuevo Cliente</a>
+            <a href="{{ route('clientes.create') }}" class="crearBtn">
+                <i class="bi bi-plus-circle"></i> Nuevo Cliente
+            </a>
 
             @if (session('success'))
                 <script>
-                    document.addEventListener('DOMContentLoaded', function() {
+                    document.addEventListener('DOMContentLoaded', function () {
                         Swal.fire({
                             icon: 'success',
                             title: '¡Éxito!',
@@ -31,77 +34,80 @@
             @endif
         </div>
 
-        <div class="table-responsive shadow-sm rounded-4">
-            <table class="table table-hover align-middle mb-0">
-                <thead class="table-light">
-                    <tr>
-                        <th>ID</th>
-                        <th>nombres</th>
-                        <th>apellidos</th>
-                        <th>tipoDocumento</th>
-                        <th>numeroDocumento</th>
-                        <th>telefono</th>
-                        <th>email</th>
-                        <th>direccion</th>
-                        <th>fechaRegistro</th>
-                        <th>fechaNacimiento</th>
-                        <th>estado</th>
-                        <th>Opciones</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($clientes as $cliente)
+        <div class="card shadow-lg rounded-3">
+            <div class="card-body table-responsive">
+                <table class="table table-striped table-hover align-middle text-center">
+                    <thead class="table-dark">
                         <tr>
-                            <td>{{ $cliente->id }}</td>
-                            <td>{{ $cliente->nombres }}</td>
-                            <td>{{ $cliente->apellidos }}</td>
-                            <td>{{ $cliente->tipoDocumento }}</td>
-                            <td>{{ $cliente->numeroDocumento }}</td>
-                            <td>{{ $cliente->telefono }}</td>
-                            <td>{{ $cliente->email }}</td>
-                            <td>{{ $cliente->direccion }}</td>
-                            <td>{{ $cliente->fechaRegistro }}</td>
-                            <td>{{ $cliente->fechaNacimiento }}</td>
-                            <td>{{ $cliente->estado == 1 ? 'Activo' : 'Inactivo' }}</td>
-                            <td>
-
-                                <a href="{{route('clientes.edit',$cliente->id)}}"class="btn btn-success btn-sm rounded-pill px-3 me-1"> Editar </a>
-
-
-
-
-                                <form action="{{route('clientes.destroy',$cliente->id)}}" method="POST"
-                                    class="d-inline" >
-                                    @csrf
-
-                                    <button class="btn btn-danger btn-sm rounded-pill px-3" onclick="confirmarEliminacion(event)"> Eliminar </button>
-
-                                </form>
-                            </td>
+                            <th>ID</th>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                            <th>Tipo Documento</th>
+                            <th>Número Documento</th>
+                            <th>Teléfono</th>
+                            <th>Email</th>
+                            <th>Dirección</th>
+                            <th>Fecha de Registro</th>
+                            <th>Fecha de Nacimiento</th>
+                            <th>Estado</th>
+                            <th>Opciones</th>
                         </tr>
-                    @endforeach
-                    @if(session('error'))
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            Swal.fire({
-                icon: 'error',
-                title: '¡Atención!',
-                text: "{{ session('error') }}",
-                confirmButtonText: 'Aceptar',
-            });
-        });
-    </script>
-    @endif
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @forelse ($clientes as $cliente)
+                            <tr>
+                                <td>{{ $cliente->id }}</td>
+                                <td>{{ $cliente->nombres }}</td>
+                                <td>{{ $cliente->apellidos }}</td>
+                                <td>{{ $cliente->tipoDocumento }}</td>
+                                <td>{{ $cliente->numeroDocumento }}</td>
+                                <td>{{ $cliente->telefono }}</td>
+                                <td>{{ $cliente->email }}</td>
+                                <td>{{ $cliente->direccion }}</td>
+                                <td>{{ $cliente->fechaRegistro }}</td>
+                                <td>{{ $cliente->fechaNacimiento }}</td>
+                                <td>{{ $cliente->estado == 1 ? 'Activo' : 'Inactivo' }}</td>
+                                <td>
+                                    <div class="d-flex justify-content-center gap-2">
+                                        <a href="{{ route('clientes.edit', $cliente->id) }}"
+                                           class="btnActualizar d-flex gap-2">
+                                            <i class="bi bi-pencil-square"></i> Actualizar
+                                        </a>
+
+                                        <form action="{{ route('clientes.destroy', $cliente->id) }}"
+                                              method="POST"
+                                              class="d-inline"
+                                              onsubmit="confirmarEliminacion(event)">
+                                            @csrf
+                                            <button type="submit" class="btnEliminar d-flex gap-2">
+                                                <i class="bi bi-trash"></i> Eliminar
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="12" class="text-muted">No hay clientes registrados.</td>
+                            </tr>
+                        @endforelse
+
+                        @if(session('error'))
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function () {
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: '¡Atención!',
+                                        text: "{{ session('error') }}",
+                                        confirmButtonText: 'Aceptar',
+                                    });
+                                });
+                            </script>
+                        @endif
+                    </tbody>
+                </table>
+            </div>
         </div>
-
-
-        <div class="mt-4">
-            <a href="{{ route('welcome') }}" class="btn btn-outline-secondary rounded-pill px-4">← Volver</a>
-        </div>
-
     </div>
 
     <script>
