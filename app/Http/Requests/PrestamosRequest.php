@@ -32,7 +32,7 @@ class PrestamosRequest extends FormRequest
             'fechaDesembolso' => 'nullable|date|after_or_equal:fechaAprobado',
             'idEstadoPrestamo' => 'required|integer|exists:estado_prestamos,id',
             'documentoFiador' => 'nullable|string|max:20',
-            'valorDesembolso' => 'required|numeric|min:0',
+            'valorDesembolso' => 'required|decimal|min:0',
             'numeroCuotas' => 'required|integer|min:1',
             'valorCuota' => 'required|decimal|min:0',
             'fechaLiquidacionPrestamo' => 'nullable|date|after_or_equal:fechaDesembolso',
@@ -77,7 +77,7 @@ class PrestamosRequest extends FormRequest
 
             // --- valorDesembolso ---
             'valorDesembolso.required' => 'El valor del desembolso es obligatorio.',
-            'valorDesembolso.numeric' => 'El valor del desembolso debe ser numérico.',
+            'valorDesembolso.decimal' => 'El valor del desembolso debe ser numérico.',
             'valorDesembolso.min' => 'El valor del desembolso no puede ser negativo.',
 
             // --- numeroCuotas ---
