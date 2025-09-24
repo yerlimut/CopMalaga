@@ -36,15 +36,14 @@
                 <thead class="table-light">
                     <tr>
                         <th>ID</th>
-                        <th>nombres</th>
-                        <th>apellidos</th>
+                        <th>nombre Completo</th>
                         <th>tipoDocumento</th>
                         <th>numeroDocumento</th>
                         <th>telefono</th>
                         <th>email</th>
                         <th>direccion</th>
                         <th>fechaRegistro</th>
-                        <th>fechaNacimiento</th>
+                        <th>edad</th>
                         <th>estado</th>
                         <th>Opciones</th>
                         <th></th>
@@ -54,15 +53,14 @@
                     @foreach ($clientes as $cliente)
                         <tr>
                             <td>{{ $cliente->id }}</td>
-                            <td>{{ $cliente->nombres }}</td>
-                            <td>{{ $cliente->apellidos }}</td>
+                            <td>{{ $cliente->nombreCompleto() }}</td>
                             <td>{{ $cliente->tipoDocumento }}</td>
                             <td>{{ $cliente->numeroDocumento }}</td>
                             <td>{{ $cliente->telefono }}</td>
                             <td>{{ $cliente->email }}</td>
                             <td>{{ $cliente->direccion }}</td>
                             <td>{{ $cliente->fechaRegistro }}</td>
-                            <td>{{ $cliente->fechaNacimiento }}</td>
+                            <td>{{ $cliente->edadCliente() }}</td>
                             <td>{{ $cliente->estado == 1 ? 'Activo' : 'Inactivo' }}</td>
                             <td>
 
