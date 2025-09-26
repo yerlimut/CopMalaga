@@ -11,7 +11,7 @@
 @section('Content')
 
     <div>
-        <form action="" class="d-flex justify-content-center align-items-center min-vh-100 "
+        <form action="{{ route('tipoprestamo.store') }}" class="d-flex justify-content-center align-items-center min-vh-100 "
             method="POST">
             @csrf
 
@@ -20,7 +20,7 @@
             <div class="d-flex flex-column form shadow p-4 gap-2">
 
                 <div class="d-flex align-items-center gap-3">
-                    <a href="">
+                    <a href="{{route ('tipoprestamo.index')}}">
                         <i class="bi bi-arrow-left iconBack"></i>
                     </a>
                     <h2>Crear tipo de prestamo</h2>
@@ -48,9 +48,9 @@
 
 
                   <div class="mb-4">
-                           <label class="form-label">Descripción</label>
-                          <input class="form-control @error('') is-invalid @enderror" type="text" name="descripción"
-                           id="descripción" placeholder="Ingrese una descripción">
+                           <label for="descripcion" class="form-label">Descripción</label>
+                          <input class="form-control @error('') is-invalid @enderror" type="text" name="descripcion"
+                           id="descripcion" placeholder="Ingrese una descripción">
 
                             @error('')
                         <div class="invalid-feedback">{{$message}}</div>
@@ -59,27 +59,26 @@
                   </div>
 
 
-                  <div class="mb-3">
-                            <label for="intereses" class="form-label">Intereses</label>
-                            <select class="form-select @error('descripcion') is-invalid @enderror"  name="intereses" id="intereses">
-                                <option value="15% – 30% anual">15% – 30% anual</option>
-                                <option value=" 8% – 15% anual"> 8% – 15% anual</option>
-                                <option value="10% – 20% anual">10% – 20% anual</option>
-                                <option value="5% – 12% anual">5% – 12% anual</option>
-                                <option value="12% – 25% anual">12% – 25% anual</option>
-                                <option value="18% – 28% anual">18% – 28% anual</option>
-                                <option value="12% – 22% anual">12% – 22% anual</option>
-                                <option value="20% – 35% anual">20% – 35% anual
-                                    
-                                </option>
-
-                                 @error('')
+                 <div class="mb-3">
+                    <label for="interes" class="form-label">Intereses</label>
+                    <select class="form-select @error('interes') is-invalid @enderror" name="interes" id="interes">
+                        <option value="0.15">15% – 30% anual</option>
+                        <option value="0.08">8% – 15% anual</option>
+                        <option value="0.10">10% – 20% anual</option>
+                        <option value="0.05">5% – 12% anual</option>
+                        <option value="0.12">12% – 25% anual</option>
+                        <option value="0.18">18% – 28% anual</option>
+                        <option value="0.12">12% – 22% anual</option>
+                        <option value="0.20">20% – 35% anual</option>
+                        
+                        @error('interes')
                         <div class="invalid-feedback">{{$message}}</div>
-                    @enderror
-                           
-                            </select>
+                        @enderror
+                    </select>
+                </div>
+
         
-                        </div>
+             
 
                 <div>
 
