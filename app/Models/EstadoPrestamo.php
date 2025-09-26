@@ -13,6 +13,11 @@ class EstadoPrestamo extends Model
         'nombre',
         'descripcion'
     ];
+
+    public function prestamos ()
+    {
+        return $this->hasMany(Prestamos::class,'idEstadoPrestamo');
+    }
 }
 
 
