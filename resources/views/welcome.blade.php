@@ -81,7 +81,7 @@
                 <div class="card-body">
                     <h5 class="card-title">📊 Estado de Préstamos</h5>
                     <p class="card-text">Visualiza el estado actual de los préstamos.</p>
-                    <a href="#" class="btn btn-primary">Ver Estado</a>
+                    <a href="{{route('estadoprestamo.index')}}" class="btn btn-primary">Ver Estado</a>
 
                 </div>
             </div>

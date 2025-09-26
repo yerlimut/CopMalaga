@@ -24,7 +24,7 @@ class tipoPrestamoRequest extends FormRequest
         return [
             'nombre' => 'required|string|max:100|min:3',
             'descripcion' => 'required|string|max:255',
-            'interes' => 'required|decimal|min:0|max:100'
+            'interes' => 'required|decimal:2|min:0|max:100'
         ];
     }
     public function messages(): array
