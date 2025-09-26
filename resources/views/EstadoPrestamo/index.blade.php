@@ -34,7 +34,7 @@
 
         <div class="card shadow-lg rounded-3">
             <div class="card-body">
-                <table class="table table-striped table-hover align-middle text-center">
+                <table class="table table-striped table-hover align-middle text-center" id="myTable">
                     <thead class="table-dark">
                         <tr>
                             <th>ID</th>
@@ -96,5 +96,21 @@
                 }
             });
         }
+
+        </script>
+@endsection
+
+
+  @section('js')
+    <script>
+        $(function () {
+            $('#myTable').DataTable({
+                responsive: true,
+                autoWidth: true,
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.13.8/i18n/es-ES.json'
+                }
+            });
+        });
     </script>
 @endsection

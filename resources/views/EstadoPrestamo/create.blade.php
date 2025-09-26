@@ -52,7 +52,7 @@
 
 
 
-                <Button type="submit" class="btnCrear">Crear</Button>
+                <Button type="submit" class="btnCrearMedioPago">Crear</Button>
             </div>
 
         </div>

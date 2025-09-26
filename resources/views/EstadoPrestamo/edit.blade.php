@@ -54,7 +54,7 @@
 
 
 
-                <Button type="submit" class="btnActualizar">Actualizar</Button>
+                <Button type="submit" class="btnCrearMedioPago">Actualizar</Button>
             </div>
 
         </div>
