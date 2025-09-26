@@ -8,14 +8,12 @@
 
 @section('Content')
     <div>
-        <form action="" class="d-flex justify-content-center align-items-center min-vh-100 ">
-       
-
-
+        <form action="{{ route('estadoprestamo.store') }}" method="POST" class="d-flex justify-content-center align-items-center min-vh-100 ">
+            @csrf
             <div class="d-flex flex-column form shadow p-4 gap-2">
 
                 <div class="d-flex align-items-center gap-3">
-                    <a href="">
+                    <a href="{{route('estadoprestamo.index')}}" >
                         <i class="bi bi-arrow-left iconBack"></i>
                     </a>
                     <h2>Crear Estado de Prestamo</h2>

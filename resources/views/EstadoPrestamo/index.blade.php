@@ -14,7 +14,7 @@
                 <i class="bi bi-arrow-left iconBack"></i>
             </a>
 
-            <a href="" class="crearBtn">
+            <a href="{{route('estadoprestamo.create')}}" class="crearBtn">
                 <i class="bi bi-plus-circle"></i> Crear nuevo Estado de Prestamo
             </a>
          
@@ -32,21 +32,32 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @forelse ($estadoPrestamo as $estado)
+                            <tr>
+                                <td>{{ $estado->id }}</td>
+                                <td>{{ $estado->nombre }}</td>
+                                <td>{{ $estado->descripcion }}</td>
+                                <td>
                         
-                                    <!-- <div class="d-flex justify-content-center gap-2">
-                                        <a  href=" " class="btnActualizar d-flex gap-2">
+                                    <div class="d-flex justify-content-center gap-2">
+                                        <a  href="{{ route('estadoprestamo.edit', $estado->id) }}" class="btnActualizar d-flex gap-2">
                                             <i class="bi bi-pencil-square"></i> Actualizar
                                         </a>
 
-                                        <form action="" method="POST" >
+                                        <form action="{{route('estadoprestamo.destroy', $estado->id)}}" method="POST" >
                                             @csrf
                                             <button type="submit" class="btnEliminar d-flex gap-2">
                                                 <i class="bi bi-trash"></i> Eliminar
                                             </button>
                                         </form>
-                                    </div> -->
+                                    </div>
                                 </td>
                             </tr>
+                        @empty
+                            <tr>
+                                <td colspan="4">No hay estados de prestamo registrados.</td>
+                            </tr>
+                        @endforelse
                    
                     </tbody>
                 </table>
