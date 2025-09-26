@@ -42,6 +42,7 @@
                         <tr>
                             <th>ID</th>
                             <th>Nombres Completo</th>
+
                             <th>Tipo Documento</th>
                             <th>Número Documento</th>
                             <th>Teléfono</th>
