@@ -12,4 +12,9 @@ class TipoPrestamo extends Model
         'descripcion',
         'interes'
     ];
+
+    public function prestamos ()
+    {
+        return $this->hasMany(Prestamos::class,'idTipoPrestamo');
+    }
 }
