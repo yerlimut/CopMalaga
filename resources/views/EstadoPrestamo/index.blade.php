@@ -17,7 +17,19 @@
             <a href="{{route('estadoprestamo.create')}}" class="crearBtn">
                 <i class="bi bi-plus-circle"></i> Crear nuevo Estado de Prestamo
             </a>
-         
+         @if (session('success'))
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        Swal.fire({
+                            icon: 'success',
+                            title: '¡Éxito!',
+                            text: "{{ session('success') }}",
+                            confirmButtonText: 'Aceptar',
+                            timer: 3000
+                        });
+                    });
+                </script>
+            @endif
         </div>
 
         <div class="card shadow-lg rounded-3">
@@ -46,7 +58,7 @@
 
                                         <form action="{{route('estadoprestamo.destroy', $estado->id)}}" method="POST" >
                                             @csrf
-                                            <button type="submit" class="btnEliminar d-flex gap-2">
+                                            <button type="submit" class="btnEliminar d-flex gap-2" onclick="confirmarEliminacion(event)">
                                                 <i class="bi bi-trash"></i> Eliminar
                                             </button>
                                         </form>
@@ -64,5 +76,25 @@
             </div>
         </div>
     </di>
-    
+    <script>
+        function confirmarEliminacion(event) {
+            event.preventDefault();
+            const form = event.target.closest('form');
+
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "¡No podrás revertir esto!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    form.submit();
+                }
+            });
+        }
+    </script>
 @endsection

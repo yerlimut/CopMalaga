@@ -31,14 +31,14 @@
                             <label for="nombre" class="form-label">Nombre</label>
                             <select class="form-select @error('') is-invalid @enderror " name="nombre" id="nombre">
                                   <option value="">Seleccione Un Tipo De Prestamo</option>
-                                <option value="PrestamoPersonal"  @if ($tipoprestamo->nombre=='PréstamoPersonal') selected @endif>Préstamo Personal</option>
-                                <option value="PrestamoHipotecario" @if ($tipoprestamo->nombre=='PréstamoHipotecario') selected @endif>Préstamo Hipotecario</option>
-                                <option value="PrestamoDeVehículo" @if ($tipoprestamo->nombre=='PréstamodeVehículo') selected @endif>Préstamo de Vehículo</option>
-                                <option value="PrestamoEducativo" @if ($tipoprestamo->nombre=='PréstamoEducativo') selected @endif>Préstamo Educativo</option>
-                                <option value="PrestamoEmpresarial" @if ($tipoprestamo->nombre=='PréstamoEmpresarial') selected @endif>Préstamo Empresarial</option>
-                                <option value="PrestamoDeLibreInversión" @if ($tipoprestamo->nombre=='PréstamodeLibreInversión') selected @endif>Préstamo de Libre Inversión</option>
-                                <option value="PrestamoDeNómina" @if ($tipoprestamo->nombre=='PréstamodeNómina') selected @endif>Préstamo de Nómina</option>
-                                <option value="PrestamoPignoraticio" @if ($tipoprestamo->nombre=='PréstamoPignoraticio') selected @endif>Préstamo Pignoraticio</option>
+                                <option value="PrestamoPersonal"  @if ($tipoprestamo->nombre=='PrestamoPersonal') selected @endif>Prestamo Personal</option>
+                                <option value="PrestamoHipotecario" @if ($tipoprestamo->nombre=='PrestamoHipotecario') selected @endif>Prestamo Hipotecario</option>
+                                <option value="PrestamoDeVehículo" @if ($tipoprestamo->nombre=='PrestamodeVehículo') selected @endif>Prestamo de Vehículo</option>
+                                <option value="PrestamoEducativo" @if ($tipoprestamo->nombre=='PrestamoEducativo') selected @endif>Prestamo Educativo</option>
+                                <option value="PrestamoEmpresarial" @if ($tipoprestamo->nombre=='PrestamoEmpresarial') selected @endif>Prestamo Empresarial</option>
+                                <option value="PrestamoDeLibreInversion" @if ($tipoprestamo->nombre=='PrestamodeLibreInversion') selected @endif>Prestamo de Libre Inversión</option>
+                                <option value="PrestamoDeNomina" @if ($tipoprestamo->nombre=='PrestamodeNomina') selected @endif>Prestamo de Nomina</option>
+                                <option value="PrestamoPignoraticio" @if ($tipoprestamo->nombre=='PrestamoPignoraticio') selected @endif>Prestamo Pignoraticio</option>
                             </select>
                              @error('')
                                     <div class="invalid-feedback">{{ $message }}</div>

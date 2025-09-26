@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EstadoPrestamoRequest;
 use Illuminate\Http\Request;
 use App\Models\EstadoPrestamo;
 
@@ -29,7 +30,7 @@ class EstadoPrestamoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(EstadoPrestamoRequest $request)
     {
         //
         EstadoPrestamo::create($request->all());
@@ -57,7 +58,7 @@ class EstadoPrestamoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(EstadoPrestamoRequest $request, string $id)
     {
         //
         $estadoPrestamo = EstadoPrestamo::findOrFail($id);

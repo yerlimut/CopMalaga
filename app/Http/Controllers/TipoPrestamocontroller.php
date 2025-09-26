@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\tipoPrestamoRequest;
 use Illuminate\Http\Request;
 use App\Models\TipoPrestamo;
 class TipoPrestamocontroller extends Controller
@@ -27,7 +28,7 @@ class TipoPrestamocontroller extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(tipoPrestamoRequest $request)
     {
     
         TipoPrestamo::create($request->all());
@@ -54,7 +55,7 @@ class TipoPrestamocontroller extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request,  $id)
+    public function update(tipoPrestamoRequest $request,  $id)
     {
         $tipoprestamo = TipoPrestamo::findOrFail($id);
         $tipoprestamo->update($request->all());
