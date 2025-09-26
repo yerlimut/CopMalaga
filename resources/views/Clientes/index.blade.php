@@ -37,12 +37,11 @@
 
         <div class="card shadow-lg rounded-3">
             <div class="card-body table-responsive">
-                <table class="table table-striped table-hover align-middle text-center">
+                <table class="table table-striped table-hover align-middle text-center" id="myTable">
                     <thead class="table-dark">
                         <tr>
                             <th>ID</th>
-                            <th>Nombres</th>
-                            <th>Apellidos</th>
+                            <th>Nombres Completo</th>
                             <th>Tipo Documento</th>
                             <th>Número Documento</th>
                             <th>Teléfono</th>
@@ -58,8 +57,7 @@
                         @forelse ($clientes as $cliente)
                             <tr>
                                 <td>{{ $cliente->id }}</td>
-                                <td>{{ $cliente->nombres }}</td>
-                                <td>{{ $cliente->apellidos }}</td>
+                                <td>{{ $cliente->nombreCompleto() }}</td>
                                 <td>{{ $cliente->tipoDocumento }}</td>
                                 <td>{{ $cliente->numeroDocumento }}</td>
                                 <td>{{ $cliente->telefono }}</td>
@@ -131,5 +129,25 @@
                 }
             });
         }
+
+    </script>
+
+
+
+@endsection
+
+
+
+@section('js')
+    <script>
+        $(function () {
+            $('#myTable').DataTable({
+                responsive: true,
+                autoWidth: true,
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.13.8/i18n/es-ES.json'
+                }
+            });
+        });
     </script>
 @endsection
