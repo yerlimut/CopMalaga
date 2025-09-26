@@ -14,7 +14,7 @@
                 <i class="bi bi-arrow-left iconBack"></i>
             </a>
 
-            <a href="" class="crearBtn">
+            <a href="{{ route('tipoprestamo.create') }}" class="crearBtn">
                 <i class="bi bi-plus-circle"></i> Crear tipo prestamo 
             </a>
              @if (session('success'))
@@ -46,19 +46,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($tipoprestamo as $prestamo)
+                        @forelse ($tipoprestamos as $prestamo)
                             <tr>
                                 <td>{{ $prestamo->id }}</td>
                                 <td>{{ $prestamo->nombre }}</td>
                                 <td>{{ $prestamo->descripcion }}</td>
-                                <td>{{ $prestamo->intereses }}</td>
+                                <td>{{ $prestamo->interes*100 }}%</td>
                                 <td>
                                     <div class="d-flex justify-content-center gap-2">
-                                        <a  href="" class="btnActualizar d-flex gap-2">
+                                        <a  href="{{ route('tipoprestamo.edit', $prestamo->id) }}" class="btnActualizar d-flex gap-2">
                                             <i class="bi bi-pencil-square"></i> Actualizar
                                         </a>
 
-                                        <form action="" method="POST"onclick="confirmarEliminacion(event)">
+                                        <form action="{{ route('tipoprestamo.destroy', $prestamo->id) }}" method="POST"onclick="confirmarEliminacion(event)">
                                             @csrf
                                             <button type="submit" class="btnEliminar d-flex gap-2">
                                                 <i class="bi bi-trash"></i> Eliminar
