@@ -39,4 +39,9 @@ class clientes extends Model
     {
         return floor($this->fechaRegistro->diffInDays(now()));
     }
+
+    public function prestamos ()
+    {
+        return $this->hasMany(Prestamos::class,'idCliente');
+    }
 }
