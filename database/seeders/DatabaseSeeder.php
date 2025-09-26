@@ -28,5 +28,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             MedioPagoSeeder::class,
         ]);
+
+        $this->call([
+            PrestamosSeeder::class,
+        ]);
     }
 }
