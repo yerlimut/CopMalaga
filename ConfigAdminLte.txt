@@ -1,0 +1,74 @@
+Admin lte requiere los siguientes archivos para funcionar correctamente
+
+1| public
+    /asset
+    /css
+    /js 
+
+Estos sson los archivos estáticos como de estilos, funcionamiento e imágenes para Admin lte
+
+2| views/Plantilla
+        /app.blade.php
+        /header.blade.php
+        /menu.blade.php
+
+Adentro contiene los .Blade donde se encuentra la maquetación de:
+app.blade.php (Todo lo principal y donde se inserta menú y header)
+menú.blade.php (El sidebar de la parte lateral izquierda)
+header.blade.php (La parte superior de la dashboard)
+
+-----------------------------------------------------------------
+
+Para insertar la vista welcome dentro de Admin lte
+
+@extends('Plantilla.app')  se extiende este archivo que viene de la ruta
+ /resources/views/Plantilla/app.blade.php
+
+ dentro de este archivo ya se hizo el llamado a  @yield('welcome') que a su vez en este archivo se hizo
+ el llamado a header.blade.php y menu.blade.php lo que quiere decir que app.blade.php es el componente principal 
+ para el funcionamiento de AdminLte
+
+
+Para visualizar correctamente el welcome
+
+ @extends('Plantilla.app')
+
+ @section('welcome')
+
+//Aca va el contenido del welcome
+
+ @endsection
+
+------------------------------------------------------------------------
+
+Para la implementación de contenido en Adminlte, se necesita el archivo layouts/app.blade.php -> que aquí contiene los @include de el menú y el header, en este archivo se define como va a estar envuelto nuestro contenido.
+
+ <main class="app-main">
+            <div class="app-content-header">
+                <div class="container-fluid">
+                    @yield('titleContent')
+                </div>
+            </div>
+
+ @yield('titleContent') -> Esto define el titulo de cada apartado.
+
+      <div class="app-content">
+                <div class="container-fluid">
+                    @yield('Content')
+                </div>
+            </div>
+        </main>
+
+@yield("Content) -> esto nos dice que cuando usemos este componente tendremos nuestro header y menú
+
+
+--------------
+
+en /create.blade.app
+
+@section('Content')
+
+//Aca se pone el contenido que se quiere adentro del menú y el header(Dashboard)
+
+@endsection
+
