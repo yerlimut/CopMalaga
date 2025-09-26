@@ -20,6 +20,11 @@ class clientes extends Model
         'estado',
     ];
 
+    protected $casts = [
+        'fechaNacimiento' => 'datetime',
+        'fechaRegistro' => 'datetime',
+    ];
+
     public function nombreCompleto ()
     {
         return $this->nombres . ' ' . $this->apellidos;
@@ -27,11 +32,11 @@ class clientes extends Model
 
     public function edadCliente ()
     {
-        return $this->fechaNacimiento->diffInYears(now());
+        return floor($this->fechaNacimiento->diffInYears(now()));
     }
 
     public function diasRegistro ()
     {
-        return $this->fechaRegistro->diffInDays(now());
+        return floor($this->fechaRegistro->diffInDays(now()));
     }
 }
