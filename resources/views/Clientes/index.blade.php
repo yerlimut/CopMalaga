@@ -47,8 +47,8 @@
                             <th>Teléfono</th>
                             <th>Email</th>
                             <th>Dirección</th>
-                            <th>Fecha de Registro</th>
-                            <th>Fecha de Nacimiento</th>
+                            <th>Dias de Registro</th>
+                            <th>Edad</th>
                             <th>Estado</th>
                             <th>Opciones</th>
                         </tr>
@@ -63,8 +63,8 @@
                                 <td>{{ $cliente->telefono }}</td>
                                 <td>{{ $cliente->email }}</td>
                                 <td>{{ $cliente->direccion }}</td>
-                                <td>{{ $cliente->fechaRegistro }}</td>
-                                <td>{{ $cliente->fechaNacimiento }}</td>
+                                <td>{{ $cliente->diasRegistro() }}</td>
+                                <td>{{ $cliente->edadCliente() }} años</td>
                                 <td>{{ $cliente->estado == 1 ? 'Activo' : 'Inactivo' }}</td>
                                 <td>
                                     <div class="d-flex justify-content-center gap-2">
