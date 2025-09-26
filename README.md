@@ -1,61 +1,88 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Titulo
 
-## About Laravel
+CopMalaga
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# Descripcion
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+una plataforma para la gestión de una cooperativa escolar, donde se lleva el control de estudiantes, productos, ventas, etc.
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Caracteristicas
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- Registrar y administrar productos de la cooperativa.
+- Control de ventas y compras.
+- Registro de estudiantes y usuarios.
+- Reportes básicos.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+## Tecnologías y Herramientas
+# Descripción  
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Una plataforma para la gestión de una cooperativa escolar, enfocada en el control de préstamos y la administración de clientes, incluyendo la gestión de pagos, moras y medios de pago.  
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## Características  
 
-## Contributing
+- Registrar y administrar clientes.  
+- Gestionar préstamos y sus diferentes tipos.  
+- Controlar el estado de los préstamos (activos, pagados, en mora).  
+- Registrar y administrar pagos.  
+- Controlar y gestionar la mora de los préstamos.  
+- Administración de medios de pago.  
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+## Tecnologías y Herramientas  
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+| Categoría                 | Tecnologías / Herramientas |
+|----------------------------|-----------------------------|
+| **Frameworks y Lenguajes** | ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white) ![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) ![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) |
+| **Base de Datos**          | ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white) |
+| **Sistemas Operativos**    | ![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white) ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black) ![macOS](https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white) |
+| **Entornos de Desarrollo** | ![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white) |
+| **Control de Versiones**   | ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white) |
+| **Documentación y Diseño** | Manual de identidad corporativa, Panel de distribución de trabajo |
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
+### Requisitos Previos  
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Antes de comenzar asegúrate de tener instalado en tu sistema:  
+
+| Herramienta | Logo | Enlace de descarga |
+|-------------|------|---------------------|
+| **PHP 8.x** | ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white) | [Descargar PHP](https://www.php.net/downloads.php) |
+| **Composer** | ![Composer](https://img.shields.io/badge/Composer-885630?style=for-the-badge&logo=composer&logoColor=white) | [Descargar Composer](https://getcomposer.org/download/) |
+| **Node.js & npm** | ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) ![npm](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white) | [Descargar Node.js y npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) |
+| **MySQL** | ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white) | [Descargar MySQL](https://www.mysql.com/downloads/) |
+| **Git** | ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white) | [Descargar Git](https://git-scm.com/downloads) |
+
+## Instalación  
+
+Sigue estos pasos para instalar y ejecutar el proyecto en tu entorno local:  
+
+| Paso | Descripción | Comando |
+|------|-------------|---------|
+| **1. Clonar el repositorio** | Descarga el proyecto en tu máquina local. | ```git clone``` https://github.com/FaiberAbril/CopMalaga.git |
+| **2. Instalar dependencias de PHP (Laravel)** | Instala las librerías necesarias de Laravel. | ```composer install``` |
+| **3. Instalar dependencias de Node (Frontend)** | Instala los paquetes del frontend. | ```nnpm install``` |
+| **4. Configurar variables de entorno** | Copia el archivo de ejemplo y edita tu configuración. | ```ncp .env.example .env``` ```DB_DATABASE=copmalaga DB_USERNAME=tu_usuario DB_PASSWORD=tu_contraseña``` |
+| **5. Generar la clave de la aplicación** | Crea la clave única de la app. | ```php artisan key:generate``` |
+| **6. Migrar la base de datos** | Crea las tablas y datos iniciales. | ```php artisan migrate --seed``` |
+| **7. Levantar el servidor de desarrollo** | Inicia el servidor local. | ```php artisan serve```   Disponible en: [http://localhost:8000](http://localhost:8000) |
+| **8. Compilar los assets (JS/CSS)** | Genera los archivos de frontend. | ```npm run dev``` |
+
+
+
+
+###  Autor: Equipo Cooperativa Escolar
+Proyecto  con fines educativos.
+
+
+## Colaboradores
+
+- ADSO(2929185)
+
+
+

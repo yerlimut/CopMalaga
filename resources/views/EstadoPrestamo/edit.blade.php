@@ -8,14 +8,15 @@
 
 @section('Content')
 <div class="container">
-    <form action="" class="d-flex justify-content-center align-items-center min-vh-100 ">
+    <form action="{{ route('estadoprestamo.update', $estadoPrestamo->id) }}" method="POST" class="d-flex justify-content-center align-items-center min-vh-100 ">
+        @csrf
        
 
 
             <div class="d-flex flex-column form shadow p-4 gap-2">
 
                 <div class="d-flex align-items-center gap-3">
-                    <a href="">
+                    <a href="{{route('estadoprestamo.index')}}" class="text-decoration-none text-dark">
                         <i class="bi bi-arrow-left iconBack"></i>
                     </a>
                     <h2>Actualizar Estado de Prestamo</h2>
@@ -24,13 +25,13 @@
                     <label for="nombre" class="form-label ">Estado de Prestano</label>
                     <select class="form-select" name="nombre" id="nombre" value="">
                         <option value="">Seleccione un estado de prestamo</option>
-                        <option value="Solicitado">Solicitado</option>
-                        <option value="En anaisis">En anaisis</option>
-                        <option value="Aprobado">Aprobado</option>
-                        <option value="Rechazado">Rechazado</option>
-                        <option value="Desembolso">Desembolso</option>
-                        <option value="Activo">Activo</option>
-                        <option value="Cancelado">Cancelado</option>
+                        <option value="Solicitado" @if($estadoPrestamo->nombre === 'Solicitado') selected @endif>Solicitado</option>
+                        <option value="En anaisis" @if($estadoPrestamo->nombre === 'En anaisis') selected @endif>En anaisis</option>
+                        <option value="Aprobado" @if($estadoPrestamo->nombre === 'Aprobado') selected @endif>Aprobado</option>
+                        <option value="Rechazado" @if($estadoPrestamo->nombre === 'Rechazado') selected @endif>Rechazado</option>
+                        <option value="Desembolso" @if($estadoPrestamo->nombre === 'Desembolso') selected @endif>Desembolso</option>
+                        <option value="Activo" @if($estadoPrestamo->nombre === 'Activo') selected @endif>Activo</option>
+                        <option value="Cancelado" @if($estadoPrestamo->nombre === 'Cancelado') selected @endif>Cancelado</option>
                     </select>
 
                 </div>
@@ -38,7 +39,7 @@
             
                 <div class="mb-4">
                     <label class="form-label">Descripción</label>
-                    <input class="form-control " type="text" name="descripcion" id="descripcion" value=""
+                    <input class="form-control " type="text" name="descripcion" id="descripcion" value="{{$estadoPrestamo->descripcion}}"
                         placeholder="Ingrese una descripción">
 
                 </div>
